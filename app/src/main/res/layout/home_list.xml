@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardBerita"
+    android:layout_margin="10sp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gambarBerita"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_toEndOf="@id/gambarBerita"
+            android:id="@+id/judulBerita"
+            android:text="Olahraga Pangkal Sehat"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText"  />
+
+        <TextView
+            android:layout_toEndOf="@id/gambarBerita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/tanggalBerita"
+            android:text="12 Febuari 2022"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText"  />
+
+        <TextView
+            android:layout_toEndOf="@id/tanggalBerita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/categoryBerita"
+            android:text=" | Olahraga"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText"  />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
