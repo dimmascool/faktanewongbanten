@@ -50,9 +50,6 @@ public class HomeScreen extends AppCompatActivity {
         mManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mManager);
         mAdapter = new AdapterHome(context, mItems);
-        ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(context, mItems);
-        imageviewpager = findViewById(R.id.imageViewPager);
-        imageviewpager.setAdapter(viewPager2Adapter);
         mRecyclerView.setAdapter(mAdapter);
         loadjson();
     }
@@ -67,6 +64,9 @@ public class HomeScreen extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 mItems.clear();
                 try {
+                    ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(context, mItems);
+                    imageviewpager = findViewById(R.id.imageViewPager);
+                    imageviewpager.setAdapter(viewPager2Adapter);
                     JSONArray jsonArray = response.getJSONArray("data_berita");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);

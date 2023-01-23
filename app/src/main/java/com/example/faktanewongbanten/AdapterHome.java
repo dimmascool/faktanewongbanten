@@ -43,28 +43,27 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
     @Override
     public void onBindViewHolder(@NonNull ViewProcessHolder holder, int position) {
         final ModelBerita data = item.get(position);
-        Log.e("sadad",data.url_thumbnail);
         holder.judulBerita.setText(data.judul);
-        holder.tglBerita.setText(data.tanggal_diupdate);
-        holder.ctyBerita.setText(data.kategori);
+        holder.tglBerita.setText(data.tanggal_dibuat);
+        holder.ctyBerita.setText(" | "+data.kategori);
 
         Picasso picasso = new Picasso.Builder(context.getApplicationContext()).listener(new Picasso.Listener() {
-            @Override
-            public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
-                exception.printStackTrace();
-            }
-        })
-                        .build();
-                picasso.load(data.url_thumbnail)
-                        .fit()
-                                .error(R.drawable.ic_launcher_background)
-                                                .centerCrop().into(holder.imageBerita);
+                    @Override
+                    public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
+                        exception.printStackTrace();
+                    }
+                })
+                .build();
+        picasso.load(data.url_thumbnail)
+                .fit()
+                .error(R.drawable.ic_launcher_background)
+                .centerCrop().into(holder.imageBerita);
         holder.cvBerita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, BeritaActvty.class);
-                intent.putExtra("judul",data.getJudul());
-                intent.putExtra("gambar",data.getUrl_thumbnail());
+                intent.putExtra("judul", data.getJudul());
+                intent.putExtra("gambar", data.getUrl_thumbnail());
                 intent.putExtra("tanggal", data.getTanggal_diupdate());
                 intent.putExtra("author", data.getAuthor());
                 intent.putExtra("isi", data.getIsi());
@@ -76,7 +75,6 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
     public int getItemCount() {
         return item.size();
     }
-
 
     public class ViewProcessHolder extends RecyclerView.ViewHolder {
         TextView judulBerita;
