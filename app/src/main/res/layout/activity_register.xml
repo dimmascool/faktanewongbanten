@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Register">
 
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -35,7 +37,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login Page"/>
+                android:text="Register Page"/>
             <EditText
                 android:layout_marginTop="10dp"
                 android:inputType="text"
@@ -54,16 +56,33 @@
                 android:drawableStart="@drawable/key"
                 android:background="@drawable/form"
                 android:hint=" Password"/>
-
+            <EditText
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:textSize="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/home"
+                android:background="@drawable/form"
+                android:hint=" Alamat"/>
+            <EditText
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:textSize="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/phone"
+                android:background="@drawable/form"
+                android:hint=" No. Handphone"/>
             <Button
-                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_gravity="center"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/form"
                 android:textStyle="bold"
                 android:textSize="22dp"
-                android:text="Login"/>
+                android:text="Daftar"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
@@ -71,9 +90,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:text="Klik disini untuk daftar"/>
+                android:text="Klik disini untuk login"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>
