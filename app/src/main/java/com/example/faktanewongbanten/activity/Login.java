@@ -1,14 +1,16 @@
-package com.example.faktanewongbanten;
+package com.example.faktanewongbanten.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class BeritaActvty extends AppCompatActivity {
+import com.example.faktanewongbanten.R;
+
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_berita_actvty);
+        setContentView(R.layout.activity_login);
     }
 }

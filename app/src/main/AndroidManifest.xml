@@ -20,27 +20,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Register"
+            android:name=".activity.Register"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".activity.Login"
             android:exported="false" />
         <activity
-            android:name=".BeritaActvty"
+            android:name=".activity.BeritaActvty"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomeScreen"
+            android:name=".activity.HomeScreen"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

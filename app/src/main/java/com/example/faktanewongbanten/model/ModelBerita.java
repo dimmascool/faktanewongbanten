@@ -1,14 +1,14 @@
-package com.example.faktanewongbanten;
+package com.example.faktanewongbanten.model;
 
 public class ModelBerita {
-    String id_berita;
-    String url_thumbnail;
-    String judul;
-    String isi;
-    String author;
-    String kategori;
-    String tanggal_dibuat;
-    String tanggal_diupdate;
+    public String id_berita;
+    public String url_thumbnail;
+    public String judul;
+    public String isi;
+    public String author;
+    public String kategori;
+    public String tanggal_dibuat;
+    public String tanggal_diupdate;
 
     public String getId_berita() {
         return id_berita;

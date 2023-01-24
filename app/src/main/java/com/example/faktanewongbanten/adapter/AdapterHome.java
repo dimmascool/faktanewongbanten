@@ -1,12 +1,8 @@
-package com.example.faktanewongbanten;
+package com.example.faktanewongbanten.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.faktanewongbanten.activity.BeritaActvty;
+import com.example.faktanewongbanten.model.ModelBerita;
+import com.example.faktanewongbanten.R;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHolder> {

@@ -1,10 +1,7 @@
-package com.example.faktanewongbanten;
+package com.example.faktanewongbanten.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +11,13 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.faktanewongbanten.model.ModelBerita;
+import com.example.faktanewongbanten.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.ViewHolder> {
+public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.ViewHolder> {
 
     // Array of images
     // Adding images from drawable folder
