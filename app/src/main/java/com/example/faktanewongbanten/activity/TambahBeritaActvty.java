@@ -3,6 +3,7 @@ package com.example.faktanewongbanten.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,10 +31,17 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
 import com.example.faktanewongbanten.model.ModelKategori;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,13 +66,13 @@ public class TambahBeritaActvty extends AppCompatActivity {
     StringRequest stringRequest;
     RequestQueue requestQueue;
     ArrayList<String> listSpinner = new ArrayList<>();
-
     ArrayList<ModelKategori> idSpinner = new ArrayList<>();
     Spinner spinner;
     ImageView imageView;
-    String encodeImageString, sID;
-    Bitmap image;
-    ByteArrayOutputStream stream;
+    String sID;
+    ImageView logo;
+    Bitmap bitmap;
+    String encodeImageString;
     Button uplod;
 
     @Override
@@ -95,32 +104,41 @@ public class TambahBeritaActvty extends AppCompatActivity {
     private void jsonParse() {
         String url = "https://dimas.bantani.net.id/github/get_all_kategori";
 
-        StringRequest request = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            JSONArray jsonArray = jsonObject.getJSONArray("list_kategori");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject data = jsonArray.getJSONObject(i);
-                                ModelKategori mk = new ModelKategori();
-                                mk.setId_kategori(data.getString("id_kategori"));
-                                mk.setKategori(data.getString("kategori"));
-                                String spinnerData = data.getString("kategori");
-                                sID = data.getString("id_kategori");
+                                JSONObject jsonObject = response.getJSONObject(i);
+                                String spinnerData = jsonObject.getString("kategori");
+                                sID = jsonObject.getString("id_kategori");
                                 //memasukkan data ke spinner
                                 listSpinner.add(spinnerData);
-                                idSpinner.add(mk);
-                            }
+                            }catch (JSONException e) {
+                            e.printStackTrace();
                             //set data ke spinner
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(TambahBeritaActvty.this,
                                     android.R.layout.simple_spinner_item, listSpinner);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
                             spinner.setAdapter(adapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
+                        }
+                        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                try {
+                                    JSONObject jsonObject = response.getJSONObject(position);
+                                    sID = jsonObject.getString("id_kategori");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -128,7 +146,8 @@ public class TambahBeritaActvty extends AppCompatActivity {
                 error.printStackTrace();
             }
         });
-        requestQueue.add(request);
+
+        requestQueue.add(jsonArrayRequest);
     }
 
     //method isNetworkAvailable()
@@ -146,13 +165,12 @@ public class TambahBeritaActvty extends AppCompatActivity {
         String judul = etJudul.getText().toString().trim();
         String isiberita = etIsiBerita.getText().toString().trim();
         String linkSimpan = "https://dimas.bantani.net.id/github/create_berita";
-        ModelKategori mk = new ModelKategori();
         stringRequest = new StringRequest(Request.Method.POST, linkSimpan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if (response.contains("success")) {
                     Toast.makeText(context, "Simpan Data Sukses", Toast.LENGTH_LONG).show();
-                    Log.e("kategori",mk.getId_kategori());
+
                 } else {
                     //Displaying an error message on toast
                     Toast.makeText(context, "Gagal Simpan Data", Toast.LENGTH_LONG).show();
@@ -172,44 +190,56 @@ public class TambahBeritaActvty extends AppCompatActivity {
                 params.put("judul", judul);
                 params.put("isi", isiberita);
 //                params.put("author_id", Namagame);
-                params.put("kategori",mk.getId_kategori());
-                params.put("url_thumbnail",encodeImageString );
-                Log.e("ini gambar",encodeImageString);
+                params.put("kategori",sID);
+                params.put("img_thumbnail",encodeImageString );
+                Log.e("kategori",sID);
                 //...
                 return params;
             }
         };
-
         requestQueue.add(stringRequest);
-
-
     }
     private void pickImageFromGallery() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(Intent.createChooser(intent,"Browse Image"),REQUEST_CODE_PICK_IMAGE);
+        Dexter.withActivity(TambahBeritaActvty.this)
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response)
+                    {
+                        Intent intent=new Intent(Intent.ACTION_PICK);
+                        intent.setType("image/*");
+                        startActivityForResult(Intent.createChooser(intent,"Browse Image"),1);
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        Log.e("data", response.toString());
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).check();
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK){
-            if(requestCode==REQUEST_CODE_PICK_IMAGE){
-                Uri filepath=data.getData();
-                // Menentukan nama file dan path
-                try {
-                    InputStream inputStream = getContentResolver().openInputStream(data.getData());
-                    image = BitmapFactory.decodeStream(inputStream);
-                    imageView.setImageURI(data.getData());
-                    encodeBitmapImage(image);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+        if(requestCode==1 && resultCode==RESULT_OK)
+        {
+            Uri filepath=data.getData();
+            try
+            {
+                InputStream inputStream=getContentResolver().openInputStream(filepath);
+                bitmap= BitmapFactory.decodeStream(inputStream);
+                imageView.setImageBitmap(bitmap);
+                encodeBitmapImage(bitmap);
+            }catch (Exception ex)
+            {
 
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
-
-
     private void encodeBitmapImage(Bitmap bitmap)
     {
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
