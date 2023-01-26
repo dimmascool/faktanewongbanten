@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.TambahBeritaActvty">
+    tools:context=".activity.EditBerita">
 
     <ImageView
         android:src="@drawable/logo_apk"
@@ -15,15 +15,14 @@
         />
 
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
-        card_view:cardBackgroundColor="@color/abuabu"
+        app:cardBackgroundColor="@color/abuabu"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,32 +93,50 @@
                 android:layout_height="50dp"/>
 
             <TextView
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gambar"/>
+                android:layout_marginTop="10dp"
+                android:text="Gambar"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <ImageView
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:id="@+id/uplodBeritaGambar"
                 android:src="@drawable/baseline_upload_file_24"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="70dp"
                 android:layout_height="80dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/form"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update"/>
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/form"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Delete"/>
 
-            <Button
-                android:id="@+id/btnUplod"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/form"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:text="Upload"/>
+</LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

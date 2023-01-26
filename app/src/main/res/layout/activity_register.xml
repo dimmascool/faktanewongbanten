@@ -4,93 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.Register">
 
+    <ImageView
+        android:src="@drawable/logo_apk"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        />
+
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
-        card_view:cardBackgroundColor="@color/abuabu"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="530dp"
-        card_view:cardCornerRadius="10dp">
+        app:cardBackgroundColor="@color/abuabu"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="vertical"
             android:padding="10dp">
-            <ImageView
-                android:src="@drawable/logo_apk"
-                android:layout_width="220dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="28dp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register Page"/>
-            <EditText
                 android:layout_marginTop="10dp"
-                android:inputType="text"
-                android:textSize="24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/user"
-                android:background="@drawable/form"
-                android:hint=" Username"/>
+                android:text="Register Page"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
             <EditText
-                android:layout_marginTop="10dp"
-                android:inputType="textPassword"
-                android:textSize="24dp"
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/key"
-                android:background="@drawable/form"
-                android:hint=" Password"/>
-            <EditText
-                android:layout_marginTop="10dp"
-                android:inputType="text"
-                android:textSize="24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/home"
-                android:background="@drawable/form"
-                android:hint=" Alamat"/>
-            <EditText
-                android:layout_marginTop="10dp"
-                android:inputType="text"
-                android:textSize="24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/phone"
-                android:background="@drawable/form"
-                android:hint=" No. Handphone"/>
-            <Button
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/user"
+                android:hint=" Username"
+                android:inputType="text"
+                android:textSize="24dp" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/key"
+                android:hint=" Password"
+                android:inputType="textPassword"
+                android:textSize="24dp" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/key"
+                android:hint=" Confirm Password"
+                android:inputType="textPassword"
+                android:textSize="24dp" />
+
+            <EditText
+                android:id="@+id/et_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/home"
+                android:hint=" Alamat"
+                android:inputType="text"
+                android:textSize="24dp" />
+
+            <EditText
+                android:id="@+id/et_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/phone"
+                android:hint=" No. Handphone"
+                android:inputType="text"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/btn_register"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/form"
-                android:textStyle="bold"
+                android:text="Daftar"
                 android:textSize="22dp"
-                android:text="Daftar"/>
+                android:textStyle="bold" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+                android:id="@+id/loginpage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Klik disini untuk login"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:text="Klik disini untuk login"/>
+                android:textColor="@color/biru" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
