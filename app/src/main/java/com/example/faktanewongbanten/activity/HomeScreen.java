@@ -51,7 +51,6 @@ public class HomeScreen extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         mRecyclerView = findViewById(R.id.recyclerview);
-        rvKategori = findViewById(R.id.rvkategori);
 
         mItems = new ArrayList<>();
         mKategori = new ArrayList<>();

@@ -47,7 +47,6 @@ public class AdapterKategori extends RecyclerView.Adapter<AdapterKategori.ViewPr
         TextView kategori;
         public ViewProcessHolder(View itemView) {
             super(itemView);
-            kategori = itemView.findViewById(R.id.tvKategori);
         }
     }
 

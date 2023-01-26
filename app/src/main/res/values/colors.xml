@@ -10,4 +10,5 @@
     <color name="biru">#382BEE</color>
     <color name="birutua">#0641B7</color>
     <color name="abuabu">#ECECEC</color>
+    <color name="opacityblack">#7F000000</color>
 </resources>

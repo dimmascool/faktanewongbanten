@@ -8,29 +8,30 @@
     tools:context=".activity.SplashScreen">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_centerInParent="true"
         android:id="@+id/animationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/animation"
+        android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animation" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/pakta"
-            android:text="FAKTANE "
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="FAKTANE "
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <TextView
             android:textColor="@color/birutua"
@@ -38,9 +39,9 @@
             android:layout_toEndOf="@id/pakta"
             android:text="WONG"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:textSize="28sp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="78dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -50,12 +51,12 @@
             android:layout_toEndOf="@id/wong"
             android:text="BANTEN"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:textSize="28sp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="108dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <ProgressBar
