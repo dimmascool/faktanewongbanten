@@ -47,7 +47,6 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         context=HomeScreen.this;
 
-        getSupportActionBar().hide();
 
         requestQueue = Volley.newRequestQueue(this);
 
