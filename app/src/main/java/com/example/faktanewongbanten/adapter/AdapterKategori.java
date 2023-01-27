@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.faktanewongbanten.model.ModelKategori;
 import com.example.faktanewongbanten.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,7 +37,11 @@ public class AdapterKategori extends RecyclerView.Adapter<AdapterKategori.ViewPr
     @Override
     public void onBindViewHolder(@NonNull ViewProcessHolder holder, int position) {
         final ModelKategori data = item.get(position);
-        holder.kategori.setText(data.kategori+" | ");
+        holder.kategori.setText(data.kategori);
+        Picasso.get().load(data.getUrl_gambar_kategori())
+                .fit()
+                .error(R.drawable.ic_launcher_background)
+                .centerCrop().into(holder.gambar);
     }
 
     @Override
@@ -45,8 +51,12 @@ public class AdapterKategori extends RecyclerView.Adapter<AdapterKategori.ViewPr
 
     public class ViewProcessHolder extends RecyclerView.ViewHolder {
         TextView kategori;
+        ImageView gambar;
         public ViewProcessHolder(View itemView) {
             super(itemView);
+            kategori = itemView.findViewById(R.id.tvKategori);
+            gambar = itemView.findViewById(R.id.ivGambarcty);
+
         }
     }
 

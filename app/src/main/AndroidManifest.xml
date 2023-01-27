@@ -20,48 +20,51 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden"
+            android:name=".activity.KategoriActvty"
+            android:exported="false" />
+        <activity
             android:name=".activity.EditBerita"
-            android:exported="true" />
-        <activity
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.TambahBeritaActvty"
-            android:exported="true" />
-        <activity
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.Register"
-            android:exported="false" />
-        <activity
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.Login"
-            android:exported="false" />
-        <activity
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.BeritaActvty"
-            android:exported="false">
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.HomeScreen"
-            android:exported="true">
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.SplashScreen"
-            android:exported="true">
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

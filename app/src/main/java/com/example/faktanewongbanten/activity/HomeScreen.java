@@ -1,13 +1,17 @@
 package com.example.faktanewongbanten.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +26,7 @@ import com.example.faktanewongbanten.adapter.AdapterKategori;
 import com.example.faktanewongbanten.adapter.ViewPager2Adapter;
 import com.example.faktanewongbanten.model.ModelBerita;
 import com.example.faktanewongbanten.model.ModelKategori;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +44,23 @@ public class HomeScreen extends AppCompatActivity {
     RecyclerView.LayoutManager mManager;
     ViewPager2 imageviewpager;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.home:
+                    Toast.makeText(context, "Kamu Sedang Berada Di Home", Toast.LENGTH_SHORT).show();
+                    return false;
+                case R.id.kategori:
+                    startActivity(new Intent(context, KategoriActvty.class));
+                    return true;
+                case R.id.login:
+                    startActivity(new Intent(context, Login.class));
+                    return true;
+            }
+            return false;
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +70,8 @@ public class HomeScreen extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         mRecyclerView = findViewById(R.id.recyclerview);
-
+        BottomNavigationView botnav = findViewById(R.id.botnav);
+        botnav.setOnNavigationItemSelectedListener(bottomNavigasi);
         mItems = new ArrayList<>();
         mBanner = new ArrayList<>();
 
