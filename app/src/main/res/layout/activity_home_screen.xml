@@ -15,12 +15,11 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
         app:civ_circle_background_color="@color/birutua"
-        android:layout_width="50dp"
-        android:layout_height="80dp"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="10dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_baseline_person_outline_24" />
-
+        android:src="@drawable/account" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:layout_below="@id/logo"
@@ -42,14 +41,17 @@
         android:layout_marginBottom="10dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_alignParentBottom="true"
         android:id="@+id/botnav"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="labeled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:menu="@menu/menu"
-        android:background="@drawable/login_btn_bg" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/login_btn_bg"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu" />
 </RelativeLayout>

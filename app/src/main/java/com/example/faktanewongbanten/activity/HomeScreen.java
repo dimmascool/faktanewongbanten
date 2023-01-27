@@ -1,7 +1,10 @@
 package com.example.faktanewongbanten.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -27,6 +30,7 @@ import com.example.faktanewongbanten.adapter.ViewPager2Adapter;
 import com.example.faktanewongbanten.model.ModelBerita;
 import com.example.faktanewongbanten.model.ModelKategori;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +48,7 @@ public class HomeScreen extends AppCompatActivity {
     RecyclerView.LayoutManager mManager;
     ViewPager2 imageviewpager;
 
+
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -51,10 +56,16 @@ public class HomeScreen extends AppCompatActivity {
                 case R.id.home:
                     Toast.makeText(context, "Kamu Sedang Berada Di Home", Toast.LENGTH_SHORT).show();
                     return false;
+                case R.id.terbaru:
+                    startActivity(new Intent(context, KategoriActvty.class));
+                    return true;
+                case R.id.trending:
+                    startActivity(new Intent(context, KategoriActvty.class));
+                    return true;
                 case R.id.kategori:
                     startActivity(new Intent(context, KategoriActvty.class));
                     return true;
-                case R.id.login:
+                case R.id.menu:
                     startActivity(new Intent(context, Login.class));
                     return true;
             }
@@ -84,8 +95,8 @@ public class HomeScreen extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         loadjson();
         bannerload();
-
     }
+
     private void bannerload(){
         final String link_history = "https://dimas.bantani.net.id/github/get_berita?get_by=newest";
 

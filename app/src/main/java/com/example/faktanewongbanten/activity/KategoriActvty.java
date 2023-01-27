@@ -49,10 +49,16 @@ public class KategoriActvty extends AppCompatActivity {
                 case R.id.home:
                     Toast.makeText(context, "Kamu Sedang Berada Di Home", Toast.LENGTH_SHORT).show();
                     return false;
+                case R.id.terbaru:
+                    startActivity(new Intent(context, KategoriActvty.class));
+                    return true;
+                case R.id.trending:
+                    startActivity(new Intent(context, KategoriActvty.class));
+                    return true;
                 case R.id.kategori:
                     startActivity(new Intent(context, KategoriActvty.class));
                     return true;
-                case R.id.login:
+                case R.id.menu:
                     startActivity(new Intent(context, Login.class));
                     return true;
             }

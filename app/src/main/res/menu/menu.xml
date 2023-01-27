@@ -5,11 +5,19 @@
      android:id="@+id/home"
      android:icon="@drawable/home"/>
  <item
-     android:title="Kategori berita"
+     android:title="Terbaru"
+     android:id="@+id/terbaru"
+     android:icon="@drawable/newspaper"/>
+ <item
+     android:title="Trending"
+     android:id="@+id/trending"
+     android:icon="@drawable/trending"/>
+ <item
+     android:title="Kategori"
      android:id="@+id/kategori"
      android:icon="@drawable/kategori"/>
  <item
-     android:title="Login"
-     android:id="@+id/login"
-     android:icon="@drawable/user"/>
+     android:title="Menu"
+     android:id="@+id/menu"
+     android:icon="@drawable/menu_icon"/>
 </menu>
