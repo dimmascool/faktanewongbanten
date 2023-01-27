@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,7 +44,8 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // This will set the images in imageview
         final ModelBerita data = images.get(position);
-        Log.e("vpg",data.url_thumbnail);
+//        Log.e("vpg",data.url_thumbnail);
+
         Picasso picasso = new Picasso.Builder(ctx).listener(new Picasso.Listener() {
                     @Override
                     public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
@@ -54,6 +56,7 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
         picasso.load(data.url_thumbnail)
                 .fit()
                 .into(holder.images);
+        holder.judul.setText(data.judul);
 
     }
     // This Method returns the size of the Array
@@ -65,10 +68,11 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
     // The ViewHolder class holds the view
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView images;
-
+        TextView judul;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             images = itemView.findViewById(R.id.images);
+            judul = itemView.findViewById(R.id.tvJudulVPG);
         }
 
     }

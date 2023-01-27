@@ -32,13 +32,11 @@ import java.util.ArrayList;
 public class HomeScreen extends AppCompatActivity {
 
     Context context;
-    RecyclerView mRecyclerView,rvKategori;
-    RecyclerView.Adapter mAdapter,kAdapter;
-    ArrayList<ModelBerita> mItems;
-    ArrayList<ModelKategori> mKategori;
+    RecyclerView mRecyclerView;
+    RecyclerView.Adapter mAdapter;
+    ArrayList<ModelBerita> mItems,mBanner;
     RequestQueue requestQueue;
-    StringRequest stringRequest;
-    RecyclerView.LayoutManager mManager,lmKategori;
+    RecyclerView.LayoutManager mManager;
     ViewPager2 imageviewpager;
 
     @Override
@@ -47,49 +45,54 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         context=HomeScreen.this;
 
-
         requestQueue = Volley.newRequestQueue(this);
 
         mRecyclerView = findViewById(R.id.recyclerview);
 
         mItems = new ArrayList<>();
-        mKategori = new ArrayList<>();
+        mBanner = new ArrayList<>();
 
         mManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        lmKategori = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
 
         mRecyclerView.setLayoutManager(mManager);
-        rvKategori.setLayoutManager(lmKategori);
 
         mAdapter = new AdapterHome(context, mItems);
-        kAdapter = new AdapterKategori(context,mKategori);
 
         mRecyclerView.setAdapter(mAdapter);
-        rvKategori.setAdapter(kAdapter);
         loadjson();
-        loadctgy();
+        bannerload();
+
     }
-    private void loadctgy(){
-        final String link_history = "https://dimas.bantani.net.id/github/get_all_kategori";
+    private void bannerload(){
+        final String link_history = "https://dimas.bantani.net.id/github/get_berita?get_by=newest";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        mKategori.clear();
+                        mBanner.clear();
                         try {
-                            JSONArray jsonArray = response.getJSONArray("list_kategori");
+                            ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(context, mBanner);
+                            imageviewpager = findViewById(R.id.imageViewPager);
+                            imageviewpager.setAdapter(viewPager2Adapter);
+                            JSONArray jsonArray = response.getJSONArray("data_berita");
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                ModelKategori mk = new ModelKategori();
-                                mk.setId_kategori(jsonObject.getString("id_kategori"));
-                                mk.setKategori(jsonObject.getString("kategori"));
-                                mKategori.add(mk);
+                                ModelBerita mb = new ModelBerita();
+                                mb.setAuthor(jsonObject.getString("author"));
+                                mb.setIsi(jsonObject.getString("isi"));
+                                mb.setJudul(jsonObject.getString("judul"));
+                                mb.setUrl_thumbnail(jsonObject.getString("url_thumbnail"));
+                                mb.setId_berita(jsonObject.getString("id_berita"));
+                                mb.setKategori(jsonObject.getString("kategori"));
+                                mb.setTanggal_dibuat(jsonObject.getString("tanggal_dibuat"));
+                                mb.setTanggal_diupdate(jsonObject.getString("tanggal_diupdate"));
+                                mBanner.add(mb);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        kAdapter.notifyDataSetChanged();
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -102,6 +105,7 @@ public class HomeScreen extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
     }
+
     private void loadjson() {
 
         final String link_history = "https://dimas.bantani.net.id/github/get_all_berita";

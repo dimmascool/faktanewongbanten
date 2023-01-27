@@ -12,6 +12,7 @@
         android:layout_gravity="center"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/ivBack"
             android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,17 +27,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/ivGambar"
             android:background="@color/opacityblack"
             android:layout_gravity="center"
             android:layout_width="350dp"
             android:layout_height="150dp"/>
         <TextView
+            android:id="@+id/tvJudul"
             android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textSize="28dp"
@@ -46,6 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Judul Berita"/>
         <TextView
+            android:id="@+id/tvTanggal"
             android:layout_marginTop="5dp"
             android:textSize="14dp"
             android:textColor="@color/black"
@@ -54,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Tanggal Berita"/>
         <TextView
+            android:id="@+id/tvPenulis"
             android:layout_marginTop="5dp"
             android:textSize="14dp"
             android:textStyle="bold"
@@ -62,14 +67,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Penulis : Khatibul Umam"/>
+        <ScrollView
+            android:fillViewport="true"
+            android:scrollbars="vertical"
+            android:isScrollContainer="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <TextView
+            android:id="@+id/tvIsiBerita"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
             android:textColor="@color/black"
             android:justificationMode="inter_word"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Isi Berita"/>
+    </ScrollView>
     </LinearLayout>
 
 </LinearLayout>

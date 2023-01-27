@@ -62,9 +62,10 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
                 Intent intent = new Intent(context, BeritaActvty.class);
                 intent.putExtra("judul", data.getJudul());
                 intent.putExtra("gambar", data.getUrl_thumbnail());
-                intent.putExtra("tanggal", data.getTanggal_diupdate());
+                intent.putExtra("tanggal", data.getTanggal_dibuat());
                 intent.putExtra("author", data.getAuthor());
                 intent.putExtra("isi", data.getIsi());
+                context.startActivity(intent);
             }
         });
     }

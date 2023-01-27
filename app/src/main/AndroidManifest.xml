@@ -20,18 +20,28 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.EditBerita"
             android:exported="true" />
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.TambahBeritaActvty"
             android:exported="true" />
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.Register"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.Login"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.BeritaActvty"
             android:exported="false">
             <meta-data
@@ -39,6 +49,8 @@
                 android:value="" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.HomeScreen"
             android:exported="true">
             <meta-data
@@ -46,6 +58,8 @@
                 android:value="" />
         </activity>
         <activity
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".activity.SplashScreen"
             android:exported="true">
             <intent-filter>
