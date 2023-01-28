@@ -49,6 +49,7 @@ public class BeritaActvty extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(context, HomeScreen.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
             }
         });
     }

@@ -58,15 +58,19 @@ public class HomeScreen extends AppCompatActivity {
                     return false;
                 case R.id.terbaru:
                     startActivity(new Intent(context, TerbaruActvty.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.trending:
                     startActivity(new Intent(context, TrendingActvty.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.kategori:
                     startActivity(new Intent(context, KategoriActvty.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.menu:
                     startActivity(new Intent(context, Login.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }
             return false;

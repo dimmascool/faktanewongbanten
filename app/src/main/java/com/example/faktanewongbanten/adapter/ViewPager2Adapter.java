@@ -56,7 +56,15 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
         picasso.load(data.url_thumbnail)
                 .fit()
                 .into(holder.images);
-        holder.judul.setText(data.judul);
+
+        final int panjang = data.judul.length();
+        if (panjang >= 68) {
+            final String mIsi = data.judul.substring(0, 68);
+            holder.judulBerita.setText(mIsi.concat("..."));
+        } else {
+            final String mIsi = data.judul;
+            holder.judulBerita.setText(mIsi);
+        }
 
     }
     // This Method returns the size of the Array
@@ -68,11 +76,11 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
     // The ViewHolder class holds the view
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView images;
-        TextView judul;
+        TextView judulBerita;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             images = itemView.findViewById(R.id.images);
-            judul = itemView.findViewById(R.id.tvJudulVPG);
+            judulBerita = itemView.findViewById(R.id.tvJudulVPG);
         }
 
     }

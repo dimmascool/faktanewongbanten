@@ -48,18 +48,22 @@ public class KategoriActvty extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.home:
                     startActivity(new Intent(context, HomeScreen.class));
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.terbaru:
                     startActivity(new Intent(context, TerbaruActvty.class));
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.trending:
                     startActivity(new Intent(context, TrendingActvty.class));
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.kategori:
                     Toast.makeText(context, "Kamu Sedang Berada Di Kategori", Toast.LENGTH_SHORT).show();
                     return false;
                 case R.id.menu:
                     startActivity(new Intent(context, Login.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }
             return false;

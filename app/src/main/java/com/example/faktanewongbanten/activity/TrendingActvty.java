@@ -47,18 +47,22 @@ public class TrendingActvty extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.home:
                     startActivity(new Intent(context, HomeScreen.class));
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.terbaru:
                     startActivity(new Intent(context, TerbaruActvty.class));
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.trending:
                     Toast.makeText(context, "Kamu Sedang Berada Di Trending", Toast.LENGTH_SHORT).show();
                     return false;
                 case R.id.kategori:
                     startActivity(new Intent(context, KategoriActvty.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.menu:
                     startActivity(new Intent(context, Login.class));
+                    overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }
             return false;

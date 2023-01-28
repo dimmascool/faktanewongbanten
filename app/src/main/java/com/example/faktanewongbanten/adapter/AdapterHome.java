@@ -41,7 +41,14 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
     @Override
     public void onBindViewHolder(@NonNull ViewProcessHolder holder, int position) {
         final ModelBerita data = item.get(position);
-        holder.judulBerita.setText(data.judul);
+        final int panjang = data.judul.length();
+        if (panjang >= 68) {
+            final String mIsi = data.judul.substring(0, 68);
+            holder.judulBerita.setText(mIsi.concat("..."));
+        } else {
+            final String mIsi = data.judul;
+            holder.judulBerita.setText(mIsi);
+        }
         holder.tglBerita.setText(data.tanggal_dibuat);
         holder.ctyBerita.setText(" | "+data.kategori);
 
