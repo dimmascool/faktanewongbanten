@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AkunSaya">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profil"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:visibility="visible"
+            android:layout_height="2dp"
+            android:background="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Nama user yang bagus"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:text="Bio user yang ganteng sejagat raya"/>
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="2dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_tambahberita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profil"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Tambah Berita" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_tambahberita"
+        android:id="@+id/mypost"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/newspaper"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text=" Konten Saya"/>
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/share"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/mypost"
+        android:id="@+id/share_app"
+        android:text=" Share"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/info"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/share_app"
+        android:id="@+id/about"
+        android:text=" About"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/version"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/about"
+        android:id="@+id/app_version"
+        android:text=" Versi Aplikasi"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/app_version"
+        android:id="@+id/logout"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:drawableStart="@drawable/logout"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text=" Log Out"/>
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botnav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/login_btn_bg"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu" />
+</RelativeLayout>
