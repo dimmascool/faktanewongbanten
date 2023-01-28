@@ -20,8 +20,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.EditAkun"
+            android:exported="true" />
+        <activity
             android:name=".activity.AkunSaya"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activity.KategoriResultactvty"
             android:configChanges="orientation|keyboardHidden"

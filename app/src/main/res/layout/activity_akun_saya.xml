@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="5dp"
             android:visibility="visible"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/black"/>
         <TextView
             android:layout_width="match_parent"
@@ -33,11 +33,11 @@
         <View
             android:layout_width="match_parent"
             android:visibility="visible"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/black"/>
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_tambahberita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,9 @@
         android:layout_centerInParent="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="Tambah Berita" />
+        android:text="Tambah Berita"
+        app:icon="@drawable/edit"
+        app:iconGravity="textStart" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,10 +77,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/share"
+        android:drawableStart="@drawable/ic_baseline_person_outline_24"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/mypost"
+        android:id="@+id/myprofil"
+        android:text=" Akun Saya"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/share"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/myprofil"
         android:id="@+id/share_app"
         android:text=" Share"/>
     <TextView
