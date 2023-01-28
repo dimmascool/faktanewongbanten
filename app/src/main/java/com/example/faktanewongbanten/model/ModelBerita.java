@@ -9,6 +9,15 @@ public class ModelBerita {
     public String kategori;
     public String tanggal_dibuat;
     public String tanggal_diupdate;
+    public String dilihat;
+
+    public String getDilihat() {
+        return dilihat;
+    }
+
+    public void setDilihat(String dilihat) {
+        this.dilihat = dilihat;
+    }
 
     public String getId_berita() {
         return id_berita;

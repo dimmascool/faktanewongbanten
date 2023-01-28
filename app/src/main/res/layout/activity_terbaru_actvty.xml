@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeScreen">
+    tools:context=".activity.KategoriActvty">
 
     <ImageView
         android:id="@+id/logo"
@@ -19,23 +20,14 @@
         android:layout_height="70dp"
         android:layout_marginEnd="10dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/account" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_below="@id/logo"
-        android:id="@+id/imageViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="15dp"
-        android:orientation="horizontal"
-        android:layout_marginEnd="15dp" />
+        android:src="@drawable/account"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_above="@id/botnav"
-        android:id="@+id/recyclerview"
+        android:id="@+id/rvTerbaru"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/imageViewPager"
+        android:layout_below="@id/logo"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp" />

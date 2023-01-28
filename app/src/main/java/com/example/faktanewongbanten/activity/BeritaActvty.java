@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso;
 
 public class BeritaActvty extends AppCompatActivity {
     RequestQueue requestQueue;
-    StringRequest stringRequest;
     Context context;
     TextView judul,tanggal,penulis,isi;
     ImageView gambar,back;

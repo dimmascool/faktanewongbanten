@@ -47,17 +47,17 @@ public class KategoriActvty extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
                 case R.id.home:
-                    Toast.makeText(context, "Kamu Sedang Berada Di Home", Toast.LENGTH_SHORT).show();
-                    return false;
+                    startActivity(new Intent(context, HomeScreen.class));
+                    return true;
                 case R.id.terbaru:
-                    startActivity(new Intent(context, KategoriActvty.class));
+                    startActivity(new Intent(context, TerbaruActvty.class));
                     return true;
                 case R.id.trending:
-                    startActivity(new Intent(context, KategoriActvty.class));
+                    startActivity(new Intent(context, TrendingActvty.class));
                     return true;
                 case R.id.kategori:
-                    startActivity(new Intent(context, KategoriActvty.class));
-                    return true;
+                    Toast.makeText(context, "Kamu Sedang Berada Di Kategori", Toast.LENGTH_SHORT).show();
+                    return false;
                 case R.id.menu:
                     startActivity(new Intent(context, Login.class));
                     return true;
@@ -96,6 +96,7 @@ public class KategoriActvty extends AppCompatActivity {
                         mk.setKategori(jsonObject.getString("kategori"));
                         mk.setId_kategori(jsonObject.getString("id_kategori"));
                         mk.setUrl_gambar_kategori(jsonObject.getString("url_gambar_kategori"));
+                        mk.setDeskripsi(jsonObject.getString("deskripsi"));
                         mItems.add(mk);
                     }catch (JSONException e) {
                         e.printStackTrace();

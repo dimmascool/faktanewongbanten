@@ -4,6 +4,15 @@ public class ModelKategori {
     public String id_kategori;
     public String kategori;
     public String url_gambar_kategori;
+    public String deskripsi;
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
 
     public String getUrl_gambar_kategori() {
         return url_gambar_kategori;
