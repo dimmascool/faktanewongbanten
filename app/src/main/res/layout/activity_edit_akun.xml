@@ -10,26 +10,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal">
         <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="top"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/arrow_back"/>
         <ImageView
-            android:layout_marginLeft="55dp"
             android:src="@drawable/logo_apk"
-            android:layout_width="220dp"
-            android:layout_height="100dp" />
+            android:layout_width="fill_parent"
+            android:layout_height="70dp" />
     </LinearLayout>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:cardBackgroundColor="@color/abuabu"
@@ -38,7 +39,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -46,67 +47,126 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:text="Edit Akun"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/hitamabu"
                 android:textSize="28dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/et_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/form"
-                android:drawableStart="@drawable/user"
-                android:hint=" Username"
-                android:inputType="text"
-                android:textSize="24dp" />
-
-            <EditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="10dp"
-                android:background="@drawable/form"
-                android:drawableStart="@drawable/key"
-                android:hint=" Password"
-                android:inputType="textPassword"
-                android:textSize="24dp" />
-
-            <EditText
-                android:id="@+id/et_confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/form"
-                android:drawableStart="@drawable/key"
-                android:hint=" Confirm Password"
-                android:inputType="textPassword"
-                android:textSize="24dp" />
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="outline"
+                app:helperText="Masukan username yang valid"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxBackgroundColor="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:drawableStart="@drawable/user"
+                    android:hint=" Username"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/et_alamat"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/form"
-                android:drawableStart="@drawable/home"
-                android:hint=" Alamat"
-                android:inputType="text"
-                android:textSize="24dp" />
+                app:passwordToggleEnabled="true"
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="outline"
+                app:helperText="Masukan password yang valid"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxBackgroundColor="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/key"
+                    android:inputType="textPassword"
+                    android:hint=" Password"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/et_nohp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="outline"
+                app:helperText="Masukan ulang password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxBackgroundColor="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="textPassword"
+                    android:drawableStart="@drawable/key"
+                    android:hint=" Confirm password" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="10dp"
-                android:background="@drawable/form"
-                android:drawableStart="@drawable/phone"
-                android:hint=" No. Handphone"
-                android:inputType="text"
-                android:textSize="24dp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="outline"
+                app:helperText="Masukan alamat yang valid"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxBackgroundColor="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:drawableStart="@drawable/home"
+                    android:hint=" Alamat" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="outline"
+                app:helperText="Masukan no handphone yang aktif"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxBackgroundColor="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_nohp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:drawableStart="@drawable/phone"
+                    android:hint=" Nomor Handphone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,24 +174,26 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:orientation="horizontal">
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnUpdateAccount"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/form"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_border"
                     android:textStyle="bold"
+                    android:textColor="@color/hitamabu"
                     android:textSize="20sp"
                     android:text="Update"/>
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnCancelUpdate"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/form"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_border_delete"
                     android:textStyle="bold"
+                    android:textColor="@color/hitamabu"
                     android:textSize="20sp"
                     android:text="Cancel"/>
 

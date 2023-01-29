@@ -62,7 +62,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/newspaper"
+            android:drawableStart="@drawable/content"
+            android:drawableTint="@color/hitamabu"
             android:padding="5dp"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -82,11 +83,13 @@
         android:textSize="18sp"
         android:layout_below="@id/mypost"
         android:id="@+id/myprofil"
+        android:drawableTint="@color/hitamabu"
         android:text=" Akun Saya"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/share"
+        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/myprofil"
@@ -96,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/info"
+        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/share_app"
@@ -105,6 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/version"
+        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/about"
@@ -128,6 +133,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:drawableStart="@drawable/logout"
+            android:drawableTint="@color/hitamabu"
             android:textSize="20sp"
             android:textStyle="bold"
             android:text=" Log Out"/>
