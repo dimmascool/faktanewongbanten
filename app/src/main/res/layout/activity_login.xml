@@ -34,7 +34,7 @@
         android:layout_marginRight="20dp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         card_view:cardCornerRadius="10dp">
 
         <LinearLayout
@@ -52,7 +52,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login Page"/>
+                android:text="Sign In"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="20dp"
@@ -110,7 +110,7 @@
                 android:textSize="18sp"
                 android:text="Login"/>
             <TextView
-                android:id="@+id/registerpage"
+                android:id="@+id/lupapasswordpage"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"

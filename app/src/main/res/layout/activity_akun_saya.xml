@@ -87,6 +87,31 @@
         android:id="@+id/myprofil"
         android:drawableTint="@color/hitamabu"
         android:text=" Akun Saya"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/bio"
+        android:layout_marginStart="20dp"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/myprofil"
+        android:id="@+id/ubahbiodata"
+        android:drawableTint="@color/hitamabu"
+        android:text=" Ubah Biodata"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:drawableStart="@drawable/key"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/ubahbiodata"
+        android:id="@+id/ubahpassword"
+        android:drawableTint="@color/hitamabu"
+        android:text=" Ubah Password"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,7 +119,7 @@
         android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
-        android:layout_below="@id/myprofil"
+        android:layout_below="@id/ubahpassword"
         android:id="@+id/share_app"
         android:text=" Share"/>
     <TextView
