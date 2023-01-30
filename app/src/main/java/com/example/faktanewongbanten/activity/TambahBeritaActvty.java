@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
@@ -35,6 +36,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
+import com.example.faktanewongbanten.model.ModelAuthor;
 import com.example.faktanewongbanten.model.ModelKategori;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -66,7 +68,7 @@ public class TambahBeritaActvty extends AppCompatActivity {
     StringRequest stringRequest;
     RequestQueue requestQueue;
     ArrayList<String> listSpinner = new ArrayList<>();
-    ArrayList<ModelKategori> idSpinner = new ArrayList<>();
+    SharedPreferences sh;
     Spinner spinner;
     ImageView imageView;
     String sID;
@@ -79,7 +81,7 @@ public class TambahBeritaActvty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_berita_actvty);
-
+        sh = getSharedPreferences("author", Context.MODE_PRIVATE);
         context = TambahBeritaActvty.this;
         uplod = findViewById(R.id.btnUplod);
         requestQueue = Volley.newRequestQueue(this);
@@ -121,6 +123,7 @@ public class TambahBeritaActvty extends AppCompatActivity {
                                     android.R.layout.simple_spinner_item, listSpinner);
 
                             spinner.setAdapter(adapter);
+                            spinner.setSelection(0);
                         }
                         }
                         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -159,6 +162,7 @@ public class TambahBeritaActvty extends AppCompatActivity {
     }
 
     private void simpanBerita() {
+        ModelAuthor ma = new ModelAuthor();
         Button btnUpload = findViewById(R.id.btnUplod);
         EditText etJudul = findViewById(R.id.etJudul);
         EditText etIsiBerita = findViewById(R.id.etIsiBerita);
@@ -170,7 +174,7 @@ public class TambahBeritaActvty extends AppCompatActivity {
             public void onResponse(String response) {
                 if (response.contains("success")) {
                     Toast.makeText(context, "Simpan Data Sukses", Toast.LENGTH_LONG).show();
-
+                    startActivity(new Intent(context, KontenSayaActvty.class));
                 } else {
                     //Displaying an error message on toast
                     Toast.makeText(context, "Gagal Simpan Data", Toast.LENGTH_LONG).show();
@@ -189,10 +193,10 @@ public class TambahBeritaActvty extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("judul", judul);
                 params.put("isi", isiberita);
-//                params.put("author_id", Namagame);
+                params.put("author_id", sh.getString("id",""));
                 params.put("kategori",sID);
                 params.put("img_thumbnail",encodeImageString );
-                Log.e("kategori",sID);
+
                 //...
                 return params;
             }
@@ -222,7 +226,6 @@ public class TambahBeritaActvty extends AppCompatActivity {
                     }
                 }).check();
     }
-
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode==1 && resultCode==RESULT_OK)
         {

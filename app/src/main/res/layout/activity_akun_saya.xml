@@ -18,6 +18,7 @@
             android:layout_height="1dp"
             android:background="@color/black"/>
         <TextView
+            android:id="@+id/tvUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -60,6 +61,7 @@
             android:layout_height="1dp"
             android:background="@color/black"/>
         <TextView
+            android:id="@+id/tvKonten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/content"
@@ -129,6 +131,7 @@
             android:layout_height="1dp"
             android:background="@color/black"/>
         <TextView
+            android:id="@+id/tvLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"

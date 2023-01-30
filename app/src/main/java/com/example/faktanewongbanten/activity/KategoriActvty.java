@@ -62,7 +62,7 @@ public class KategoriActvty extends AppCompatActivity {
                     Toast.makeText(context, "Kamu Sedang Berada Di Kategori", Toast.LENGTH_SHORT).show();
                     return false;
                 case R.id.menu:
-                    startActivity(new Intent(context, Login.class));
+                    startActivity(new Intent(context, AkunSaya.class));
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }

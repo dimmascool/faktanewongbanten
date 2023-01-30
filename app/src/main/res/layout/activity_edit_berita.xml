@@ -67,7 +67,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etJudul"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
+                    android:maxLength="9000"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:scrollHorizontally="false"
                     android:textColor="@color/black"
                     android:hint=" Judul Berita"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -122,9 +125,8 @@
                 android:id="@+id/uplodBeritaGambar"
                 android:src="@drawable/baseline_upload_file_24"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="70dp"
-                android:layout_height="80dp"
-                app:tint="@color/hitamabu" />
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -142,19 +144,7 @@
         android:textStyle="bold"
         android:textSize="18sp"
         android:text="Update"/>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDelete"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:background="@drawable/button_border_delete"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Delete"/>
 </LinearLayout>
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 </LinearLayout>

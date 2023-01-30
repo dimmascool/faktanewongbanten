@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -21,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
+import com.example.faktanewongbanten.adapter.AdapterAkunSaya;
 import com.example.faktanewongbanten.adapter.AdapterHome;
 import com.example.faktanewongbanten.model.ModelBerita;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,13 +31,16 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class KategoriResultactvty extends AppCompatActivity {
+public class KontenSayaActvty extends AppCompatActivity {
+
     Context context;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
     ArrayList<ModelBerita> mItems;
     RequestQueue requestQueue;
     RecyclerView.LayoutManager mManager;
+    public SharedPreferences sh;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -45,23 +48,23 @@ public class KategoriResultactvty extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.home:
                     startActivity(new Intent(context, HomeScreen.class));
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.terbaru:
                     startActivity(new Intent(context, TerbaruActvty.class));
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
-                    return true;
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
+                    return false;
                 case R.id.trending:
                     startActivity(new Intent(context, TrendingActvty.class));
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.kategori:
                     startActivity(new Intent(context, KategoriActvty.class));
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
                 case R.id.menu:
                     startActivity(new Intent(context, AkunSaya.class));
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
                     return true;
             }
             return false;
@@ -70,12 +73,12 @@ public class KategoriResultactvty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kategori_resultactvty);
-        context=KategoriResultactvty.this;
+        setContentView(R.layout.activity_konten_saya_actvty);
+        context=KontenSayaActvty.this;
 
         requestQueue = Volley.newRequestQueue(this);
 
-        mRecyclerView = findViewById(R.id.rvCtyRes);
+        mRecyclerView = findViewById(R.id.rvKontensaya);
         BottomNavigationView botnav = findViewById(R.id.botnav);
         botnav.setOnNavigationItemSelectedListener(bottomNavigasi);
         mItems = new ArrayList<>();
@@ -84,15 +87,15 @@ public class KategoriResultactvty extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mManager);
 
-        mAdapter = new AdapterHome(context, mItems);
+        mAdapter = new AdapterAkunSaya(context, mItems);
 
         mRecyclerView.setAdapter(mAdapter);
         loadjson();
     }
     private void loadjson() {
-       String pilihan = getIntent().getStringExtra("kategori");
-        final String link_history = "https://dimas.bantani.net.id/github/get_berita?kategori="+pilihan;
-        Log.e("link",link_history);
+        SharedPreferences sh = getSharedPreferences("author", Context.MODE_PRIVATE);
+        final String link_history = "https://dimas.bantani.net.id/github/get_berita?author="+sh.getString("id","");
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -112,6 +115,7 @@ public class KategoriResultactvty extends AppCompatActivity {
                                 mb.setTanggal_dibuat(jsonObject.getString("tanggal_dibuat"));
                                 mb.setTanggal_diupdate(jsonObject.getString("tanggal_diupdate"));
                                 mb.setDilihat(jsonObject.getString("dilihat"));
+                                mb.setId_kategori(jsonObject.getString("id_kategori"));
                                 mItems.add(mb);
                             }
                         } catch (JSONException e) {
@@ -130,4 +134,4 @@ public class KategoriResultactvty extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
     }
-}
+    }

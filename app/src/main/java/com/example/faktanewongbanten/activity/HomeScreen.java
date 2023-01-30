@@ -69,7 +69,7 @@ public class HomeScreen extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.menu:
-                    startActivity(new Intent(context, Login.class));
+                    startActivity(new Intent(context, AkunSaya.class));
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }

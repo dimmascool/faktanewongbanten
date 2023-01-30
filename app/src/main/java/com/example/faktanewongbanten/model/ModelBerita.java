@@ -7,9 +7,18 @@ public class ModelBerita {
     public String isi;
     public String author;
     public String kategori;
+    public String id_kategori;
     public String tanggal_dibuat;
     public String tanggal_diupdate;
     public String dilihat;
+
+    public String getId_kategori() {
+        return id_kategori;
+    }
+
+    public void setId_kategori(String id_kategori) {
+        this.id_kategori = id_kategori;
+    }
 
     public String getDilihat() {
         return dilihat;
