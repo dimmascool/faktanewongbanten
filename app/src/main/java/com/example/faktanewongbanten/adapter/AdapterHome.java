@@ -51,7 +51,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
         }
         holder.tglBerita.setText(data.tanggal_dibuat);
         holder.ctyBerita.setText(" | "+data.kategori);
-        holder.tvlihat.setText("telah dilihat oleh : "+data.dilihat);
+        holder.tvlihat.setText(data.dilihat);
 
 
         Picasso picasso = new Picasso.Builder(context.getApplicationContext()).listener(new Picasso.Listener() {
@@ -100,7 +100,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
             ctyBerita = itemView.findViewById(R.id.categoryBerita);
             cvBerita = itemView.findViewById(R.id.cardBerita);
             imageBerita = itemView.findViewById(R.id.gambarBerita);
-            tvlihat = itemView.findViewById(R.id.viewerberita);
+            tvlihat = itemView.findViewById(R.id.jumlahviewerberita);
         }
     }
 }

@@ -65,17 +65,19 @@
             android:layout_below="@id/judulBerita"
             android:id="@+id/viewerberita"
             android:layout_marginStart="20dp"
-            android:text="telah dilihat oleh :"
+            android:layout_marginTop="3dp"
+            android:drawableStart="@drawable/eye"
             android:textSize="10sp"
             android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="12dp"
+            android:layout_height="10dp"
             tools:ignore="HardcodedText"  />
 
         <TextView
             android:layout_toEndOf="@id/viewerberita"
             android:layout_below="@id/judulBerita"
             android:id="@+id/jumlahviewerberita"
+            android:layout_marginLeft="3dp"
             android:text=" jumlah"
             android:textSize="10sp"
             android:textColor="@color/black"
