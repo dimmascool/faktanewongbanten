@@ -51,6 +51,8 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
         }
         holder.tglBerita.setText(data.tanggal_dibuat);
         holder.ctyBerita.setText(" | "+data.kategori);
+        holder.tvlihat.setText("telah dilihat oleh : "+data.dilihat);
+
 
         Picasso picasso = new Picasso.Builder(context.getApplicationContext()).listener(new Picasso.Listener() {
                     @Override
@@ -68,6 +70,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
             public void onClick(View view) {
                 Intent intent = new Intent(context, BeritaActvty.class);
                 intent.putExtra("judul", data.getJudul());
+                intent.putExtra("id", data.getId_berita());
                 intent.putExtra("gambar", data.getUrl_thumbnail());
                 intent.putExtra("tanggal", data.getTanggal_dibuat());
                 intent.putExtra("author", data.getAuthor());
@@ -86,6 +89,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
         TextView judulBerita;
         TextView tglBerita;
         TextView ctyBerita;
+        TextView tvlihat;
         CardView cvBerita;
         ImageView imageBerita;
 
@@ -96,6 +100,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
             ctyBerita = itemView.findViewById(R.id.categoryBerita);
             cvBerita = itemView.findViewById(R.id.cardBerita);
             imageBerita = itemView.findViewById(R.id.gambarBerita);
+            tvlihat = itemView.findViewById(R.id.viewerberita);
         }
     }
 }
