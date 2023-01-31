@@ -72,7 +72,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_username"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/user"
                         android:hint=" Username"/>
@@ -94,7 +94,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_nickname"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/user"
                         android:hint=" Nickname"/>
@@ -117,7 +117,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:drawableStart="@drawable/key"
                         android:inputType="textPassword"
                         android:hint=" Password"
@@ -140,7 +140,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_bio"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/bio"
                         android:hint=" Biografi" />
@@ -162,7 +162,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_alamat"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/home"
                         android:hint=" Alamat" />
@@ -184,7 +184,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_nohp"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:drawableStart="@drawable/phone"
