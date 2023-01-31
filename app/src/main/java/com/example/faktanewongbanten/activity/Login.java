@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class Login extends AppCompatActivity {
      TextView registerpage;
     StringRequest stringRequest;
     RequestQueue requestQueue;
+    ImageView back;
     public SharedPreferences sharedPreferences;
 
     @Override
@@ -46,9 +48,16 @@ public class Login extends AppCompatActivity {
         context = Login.this;
         btnLogin = findViewById(R.id.btn_login);
         registerpage = findViewById(R.id.registerpage);
+        back = findViewById(R.id.back);
         requestQueue = Volley.newRequestQueue(this);
         sharedPreferences = context.getSharedPreferences("author", Context.MODE_PRIVATE);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +101,9 @@ public class Login extends AppCompatActivity {
                         editor.putString("password",data.getString("password"));
                         editor.putString("nickname",data.getString("nickname"));
                         editor.putString("status",data.getString("status"));
+                        editor.putString("alamat",data.getString("alamat"));
+                        editor.putString("no_telpon",data.getString("no_telpon"));
+                        editor.putString("bio",data.getString("bio"));
                         editor.putBoolean("login?",true);
                         editor.apply();
                         startActivity(new Intent(context, HomeScreen.class));

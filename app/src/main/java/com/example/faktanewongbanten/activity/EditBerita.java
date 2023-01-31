@@ -165,6 +165,7 @@ public class EditBerita extends AppCompatActivity {
         String linkSimpan = "https://dimas.bantani.net.id/github/edit_berita";
         SharedPreferences sh = getSharedPreferences("author", Context.MODE_PRIVATE);
         Log.e("id",sh.getString("id",""));
+        Log.e("idapalah",getIntent().getStringExtra("id"));
         stringRequest = new StringRequest(Request.Method.POST, linkSimpan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

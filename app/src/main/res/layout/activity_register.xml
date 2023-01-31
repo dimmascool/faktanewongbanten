@@ -192,7 +192,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_width="150dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_border"
                 android:textStyle="bold"
                 android:textSize="18sp"

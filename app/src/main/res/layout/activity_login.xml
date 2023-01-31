@@ -14,6 +14,7 @@
         android:gravity="center"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/back"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="5dp"
             android:layout_gravity="top"

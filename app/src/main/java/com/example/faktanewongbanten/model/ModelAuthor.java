@@ -1,7 +1,31 @@
 package com.example.faktanewongbanten.model;
 
 public class ModelAuthor {
-    public String author_id,message,username,password,nickname,status;
+    public String author_id,message,username,password,nickname,status,alamat,telpn,bio;
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getTelpn() {
+        return telpn;
+    }
+
+    public void setTelpn(String telpn) {
+        this.telpn = telpn;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public String getUsername() {
         return username;

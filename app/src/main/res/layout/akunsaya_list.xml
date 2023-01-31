@@ -37,8 +37,9 @@
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnDelete"
+            android:background="@color/white"
             app:tint="@color/red"
             android:src="@drawable/baseline_delete_24"
             android:layout_margin="10dp"
@@ -46,10 +47,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnEdit"
             app:tint="@color/hijau"
             android:layout_below="@id/btnDelete"
+            android:background="@color/white"
             android:src="@drawable/edit"
             android:layout_margin="10dp"
             android:layout_alignParentRight="true"

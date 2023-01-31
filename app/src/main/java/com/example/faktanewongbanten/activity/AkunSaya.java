@@ -18,7 +18,7 @@ import com.example.faktanewongbanten.model.ModelAuthor;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AkunSaya extends AppCompatActivity {
-    TextView nama,akunsaya,konten,logout;
+    TextView nama,akunsaya,konten,logout,bio,btnBio,btnCP;
     Button addberita;
     Context context;
     public SharedPreferences sh;
@@ -62,9 +62,27 @@ public class AkunSaya extends AppCompatActivity {
         akunsaya = findViewById(R.id.myprofil);
         konten = findViewById(R.id.tvKonten);
         logout = findViewById(R.id.tvLogout);
+        bio = findViewById(R.id.tvBio);
+        btnBio = findViewById(R.id.ubahbiodata);
+        btnCP = findViewById(R.id.ubahpassword);
         addberita = findViewById(R.id.btn_tambahberita);
         nama.setText(sh.getString("username", ""));
+        bio.setText(sh.getString("bio",""));
 
+        btnBio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, EditAkun.class));
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
+            }
+        });
+        btnCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, ChangePassword.class));
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
+            }
+        });
         konten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

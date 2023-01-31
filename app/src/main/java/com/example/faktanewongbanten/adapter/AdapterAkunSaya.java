@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -77,7 +78,7 @@ public class AdapterAkunSaya extends RecyclerView.Adapter<AdapterAkunSaya.ViewPr
         holder.cvBerita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, EditBerita.class);
+                Intent intent = new Intent(context, BeritaActvty.class);
                 intent.putExtra("judul", data.getJudul());
                 intent.putExtra("gambar", data.getUrl_thumbnail());
                 intent.putExtra("tanggal", data.getTanggal_dibuat());
@@ -152,7 +153,9 @@ public class AdapterAkunSaya extends RecyclerView.Adapter<AdapterAkunSaya.ViewPr
         TextView tglBerita;
         TextView ctyBerita;
         CardView cvBerita;
-        ImageView imageBerita,delete,edit;
+        ImageView imageBerita;
+        AppCompatImageButton delete;
+        AppCompatImageButton edit;
 
         public ViewProcessHolder(View itemView) {
             super(itemView);
