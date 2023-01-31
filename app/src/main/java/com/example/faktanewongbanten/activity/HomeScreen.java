@@ -108,7 +108,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     private void bannerload(){
-        final String link_history = "https://dimas.bantani.net.id/github/get_berita?get_by=newest";
+        final String link_history = "https://dimas.bantani.net.id/github/get_berita?get_by=trending";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {

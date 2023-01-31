@@ -59,5 +59,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText"  />
+
+        <TextView
+            android:layout_toEndOf="@id/categoryBerita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/viewerberita"
+            android:layout_marginStart="20dp"
+            android:text="telah dilihat oleh :"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText"  />
+
+        <TextView
+            android:layout_toEndOf="@id/viewerberita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/jumlahviewerberita"
+            android:text=" jumlah"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText"  />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

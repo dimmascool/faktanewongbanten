@@ -55,6 +55,7 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
                 .build();
         picasso.load(data.url_thumbnail)
                 .fit()
+                .centerCrop()
                 .into(holder.images);
 
         final int panjang = data.judul.length();
