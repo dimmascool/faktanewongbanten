@@ -25,14 +25,16 @@
         android:layout_marginBottom="10dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_alignParentBottom="true"
         android:id="@+id/botnav"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="labeled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:menu="@menu/menu"
-        android:background="@drawable/login_btn_bg" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/login_btn_bg"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu" />
 </RelativeLayout>

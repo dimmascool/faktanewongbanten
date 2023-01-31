@@ -98,7 +98,6 @@ public class KategoriResultactvty extends AppCompatActivity {
     private void loadjson() {
        String pilihan = getIntent().getStringExtra("kategori");
         final String link_history = "https://dimas.bantani.net.id/github/get_berita?kategori="+pilihan;
-        Log.e("link",link_history);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
                     @Override
