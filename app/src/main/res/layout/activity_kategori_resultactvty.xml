@@ -13,15 +13,6 @@
         android:layout_height="80dp"
         android:src="@drawable/logo_apk" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar"
-        app:civ_circle_background_color="@color/birutua"
-        android:layout_width="40dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/account"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_above="@id/botnav"
         android:id="@+id/rvCtyRes"

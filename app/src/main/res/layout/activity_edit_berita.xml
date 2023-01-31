@@ -25,6 +25,10 @@
             android:layout_height="100dp" />
     </LinearLayout>
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         app:cardBackgroundColor="@color/abuabu"
@@ -128,23 +132,24 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
-    android:gravity="center"
-    android:orientation="horizontal">
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnUpdate"
-        android:layout_gravity="center"
-        android:layout_marginRight="10dp"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:background="@drawable/button_border"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Update"/>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_border"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Update"/>
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    </ScrollView>
 </LinearLayout>

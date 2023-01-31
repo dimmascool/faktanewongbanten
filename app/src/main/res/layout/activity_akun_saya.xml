@@ -8,35 +8,45 @@
     tools:context=".activity.AkunSaya">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:id="@+id/profil"
+        android:gravity="bottom"
+        android:background="@drawable/gradient"
         android:orientation="vertical">
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginTop="5dp"
-            android:visibility="visible"
-            android:layout_height="1dp"
-            android:background="@color/black"/>
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="Nama user yang bagus"/>
-        <TextView
-            android:id="@+id/tvBio"
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:src="@drawable/backgroundakunsaya"-->
+<!--            android:scaleType="centerCrop">-->
+<!--        </ImageView>-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="18sp"
-            android:text="Bio user yang ganteng sejagat raya"/>
-        <View
-            android:layout_width="match_parent"
-            android:visibility="visible"
-            android:layout_height="1dp"
-            android:background="@color/black"/>
+            android:layout_marginTop="-73dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Nama user yang bagus"/>
+            <TextView
+                android:id="@+id/tvBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="Bio user yang ganteng sejagat raya"/>
+            <View
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+        </LinearLayout>
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -53,6 +63,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/btn_tambahberita"
         android:id="@+id/mypost"
         android:orientation="vertical">
@@ -68,50 +79,53 @@
             android:drawableStart="@drawable/content"
             android:drawableTint="@color/hitamabu"
             android:padding="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="18sp"
             android:text=" Konten Saya"/>
-        <View
-            android:layout_width="match_parent"
-            android:visibility="visible"
-            android:layout_height="1dp"
-            android:background="@color/black"/>
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_person_outline_24"
-        android:padding="5dp"
-        android:textSize="18sp"
         android:layout_below="@id/mypost"
-        android:id="@+id/myprofil"
-        android:drawableTint="@color/hitamabu"
-        android:text=" Akun Saya"/>
+        android:id="@+id/akunn"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_person_outline_24"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/mypost"
+            android:id="@+id/myprofil"
+            android:drawableTint="@color/hitamabu"
+            android:text=" Akun Saya"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/bio"
-        android:layout_marginStart="20dp"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_below="@id/myprofil"
-        android:id="@+id/ubahbiodata"
-        android:drawableTint="@color/hitamabu"
-        android:text=" Ubah Biodata"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/bio"
+            android:layout_marginStart="20dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/myprofil"
+            android:id="@+id/ubahbiodata"
+            android:drawableTint="@color/hitamabu"
+            android:text=" Ubah Biodata"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:drawableStart="@drawable/key"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_below="@id/ubahbiodata"
-        android:id="@+id/ubahpassword"
-        android:drawableTint="@color/hitamabu"
-        android:text=" Ubah Password"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:drawableStart="@drawable/key"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/ubahbiodata"
+            android:id="@+id/ubahpassword"
+            android:drawableTint="@color/hitamabu"
+            android:text=" Ubah Password"/>
+    </LinearLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -120,7 +134,7 @@
         android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
-        android:layout_below="@id/ubahpassword"
+        android:layout_below="@id/akunn"
         android:id="@+id/share_app"
         android:text=" Share"/>
     <TextView
