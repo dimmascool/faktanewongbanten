@@ -41,6 +41,7 @@ public class BeritaActvty extends AppCompatActivity {
 
         Picasso.get().load(getIntent().getStringExtra("gambar"))
                 .fit()
+                .centerCrop()
                 .error(R.drawable.ic_launcher_background)
                .into(gambar);
 
