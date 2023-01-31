@@ -120,6 +120,7 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, "Username atau Password salah", Toast.LENGTH_SHORT).show();
                 Log.e("Volley", error.toString());
             }
         }) {
