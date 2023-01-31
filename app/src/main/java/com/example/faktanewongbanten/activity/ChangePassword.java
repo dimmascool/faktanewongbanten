@@ -3,6 +3,7 @@ package com.example.faktanewongbanten.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,7 +70,7 @@ public class ChangePassword extends AppCompatActivity {
         String oldpass = etOldpass.getText().toString().trim();
         String newpass = etPassbaru.getText().toString().trim();
         String confirmpass = etConfirmPass.getText().toString().trim();
-        String linkSimpan = "https://dimas.bantani.net.id/github/edit_author";
+        String linkSimpan = "https://dimas.bantani.net.id/github/change_password_author";
         SharedPreferences sh = getSharedPreferences("author", Context.MODE_PRIVATE);
         if (!newpass.equals(confirmpass)){
             Toast.makeText(context, "Password Tidak sama", Toast.LENGTH_LONG).show();
@@ -82,7 +83,7 @@ public class ChangePassword extends AppCompatActivity {
                         editor.putString("password",confirmpass);
                         editor.apply();
                         Toast.makeText(context, "Ubah password Berhasil", Toast.LENGTH_LONG).show();
-                        finish();
+                        startActivity(new Intent(context, AkunSaya.class));
                     } else {
                         //Displaying an error message on toast
                         Toast.makeText(context, "Ubah password Gagal", Toast.LENGTH_LONG).show();

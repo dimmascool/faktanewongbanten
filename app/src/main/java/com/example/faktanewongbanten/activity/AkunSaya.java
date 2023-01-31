@@ -66,7 +66,7 @@ public class AkunSaya extends AppCompatActivity {
         btnBio = findViewById(R.id.ubahbiodata);
         btnCP = findViewById(R.id.ubahpassword);
         addberita = findViewById(R.id.btn_tambahberita);
-        nama.setText(sh.getString("username", ""));
+        nama.setText(sh.getString("nickname", ""));
         bio.setText(sh.getString("bio",""));
 
         btnBio.setOnClickListener(new View.OnClickListener() {

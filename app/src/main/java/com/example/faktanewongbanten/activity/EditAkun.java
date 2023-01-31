@@ -48,7 +48,7 @@ public class EditAkun extends AppCompatActivity {
         btnCancel = findViewById(R.id.btnCancelUpdate);
         back = findViewById(R.id.back);
 
-        etNickname.setText(sh.getString("username",""));
+        etNickname.setText(sh.getString("nickname",""));
         etBio.setText(sh.getString("bio",""));
         etAlamat.setText(sh.getString("alamat",""));
         etNohp.setText(sh.getString("no_telpon",""));
@@ -89,7 +89,7 @@ public class EditAkun extends AppCompatActivity {
                     editor.putString("no_telpon",nohp);
                     editor.apply();
                     Toast.makeText(context, "Ubah data Berhasil", Toast.LENGTH_LONG).show();
-                    finish();
+                    startActivity(new Intent(context, AkunSaya.class));
                 } else {
                     //Displaying an error message on toast
                     Toast.makeText(context, "Ubah data Gagal", Toast.LENGTH_LONG).show();
