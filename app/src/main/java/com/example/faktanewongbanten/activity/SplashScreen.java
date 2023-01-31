@@ -2,7 +2,9 @@ package com.example.faktanewongbanten.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -12,7 +14,10 @@ import android.widget.TextView;
 import com.example.faktanewongbanten.R;
 
 public class SplashScreen extends AppCompatActivity {
+
+    Context context;
     TextView pakta,wong,banten;
+    public SharedPreferences sh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +26,12 @@ public class SplashScreen extends AppCompatActivity {
         Animation topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         Animation middleAnimation = AnimationUtils.loadAnimation(this, R.anim.middle_animation);
         Animation bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
-
+        SharedPreferences sh = getSharedPreferences("author", Context.MODE_PRIVATE);
+        if(!sh.contains("login?")){
+            SharedPreferences.Editor editor = sh.edit();
+            editor.putBoolean("login?",false);
+            editor.apply();
+        }
         pakta = findViewById(R.id.pakta);
         wong = findViewById(R.id.wong);
         banten = findViewById(R.id.banten);
