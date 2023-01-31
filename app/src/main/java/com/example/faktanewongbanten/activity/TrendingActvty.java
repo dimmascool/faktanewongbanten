@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -40,7 +41,7 @@ public class TrendingActvty extends AppCompatActivity {
     RequestQueue requestQueue;
     RecyclerView.LayoutManager mManager;
 
-
+    SharedPreferences sh;
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -61,7 +62,12 @@ public class TrendingActvty extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
                 case R.id.menu:
-                    startActivity(new Intent(context, AkunSaya.class));
+                    sh = getSharedPreferences("author", Context.MODE_PRIVATE);
+                    if (sh.getBoolean("login?",true)){
+                        startActivity(new Intent(context, AkunSaya.class));
+                    }else{
+                        startActivity(new Intent(context, MenuNonLogin.class));
+                    }
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }

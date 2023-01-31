@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +42,7 @@ public class KategoriActvty extends AppCompatActivity {
     RecyclerView.LayoutManager mManager;
     ArrayList<ModelKategori> mItems;
 
+    SharedPreferences sh;
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -62,7 +64,12 @@ public class KategoriActvty extends AppCompatActivity {
                     Toast.makeText(context, "Kamu Sedang Berada Di Kategori", Toast.LENGTH_SHORT).show();
                     return false;
                 case R.id.menu:
-                    startActivity(new Intent(context, AkunSaya.class));
+                    sh = getSharedPreferences("author", Context.MODE_PRIVATE);
+                    if (sh.getBoolean("login?",true)){
+                        startActivity(new Intent(context, AkunSaya.class));
+                    }else{
+                        startActivity(new Intent(context, MenuNonLogin.class));
+                    }
                     overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
                     return true;
             }

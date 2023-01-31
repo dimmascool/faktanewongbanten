@@ -162,7 +162,7 @@ public class EditBerita extends AppCompatActivity {
         EditText etIsiBerita = findViewById(R.id.etIsiBerita);
         String judul = etJudul.getText().toString().trim();
         String isiberita = etIsiBerita.getText().toString().trim();
-        String linkSimpan = "https://dimas.bantani.net.id/github/create_berita";
+        String linkSimpan = "https://dimas.bantani.net.id/github/edit_berita";
         SharedPreferences sh = getSharedPreferences("author", Context.MODE_PRIVATE);
         Log.e("id",sh.getString("id",""));
         stringRequest = new StringRequest(Request.Method.POST, linkSimpan, new Response.Listener<String>() {
@@ -188,8 +188,8 @@ public class EditBerita extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("judul", judul);
+                params.put("id_berita", getIntent().getStringExtra("id"));
                 params.put("isi", isiberita);
-                params.put("author_id", sh.getString("id",""));
                 params.put("kategori",sID);
                 params.put("img_thumbnail",encodeImageString );
                 //...

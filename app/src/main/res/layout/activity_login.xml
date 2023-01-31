@@ -110,7 +110,7 @@
                 android:textSize="18sp"
                 android:text="Login"/>
             <TextView
-                android:id="@+id/lupapasswordpage"
+                android:id="@+id/registerpage"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"

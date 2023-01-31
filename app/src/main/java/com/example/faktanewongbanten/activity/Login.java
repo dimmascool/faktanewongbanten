@@ -33,8 +33,8 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
     Context context;
-    private Button btnLogin;
-    private TextView registerpage;
+     Button btnLogin;
+     TextView registerpage;
     StringRequest stringRequest;
     RequestQueue requestQueue;
     public SharedPreferences sharedPreferences;

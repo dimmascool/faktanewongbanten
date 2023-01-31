@@ -92,7 +92,10 @@ public class AkunSaya extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(context, "Logout Berhasil", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(context, HomeScreen.class));
-                sh.edit().clear();
+                SharedPreferences.Editor editor = sh.edit();
+                editor.clear();
+                editor.putBoolean("login?",false);
+                editor.apply();
                 overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
         });
