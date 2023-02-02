@@ -14,20 +14,21 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/arrow_back"/>
+            android:src="@drawable/arrow_back"
+            tools:ignore="ContentDescription" />
         <ImageView
-            android:layout_marginLeft="55dp"
+            android:layout_marginStart="55dp"
             android:src="@drawable/logo_apk"
             android:layout_width="220dp"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
         card_view:cardBackgroundColor="@color/abuabu"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -51,7 +52,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tulis Berita"/>
+                android:text="Tulis Berita"
+                tools:ignore="HardcodedText" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="5dp"
@@ -71,7 +73,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:hint=" Judul Berita"/>
+                    android:hint=" Judul Berita"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -95,7 +98,8 @@
                     android:inputType="textCapSentences|textMultiLine"
                     android:scrollHorizontally="false"
                     android:textColor="@color/black"
-                    android:hint=" Isi berita"/>
+                    android:hint=" Isi berita"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -104,7 +108,8 @@
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Pilih kategori berita"/>
+                android:hint="Pilih kategori berita"
+                tools:ignore="HardcodedText" />
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/item_spinner"
                     android:layout_width="match_parent"
@@ -117,7 +122,8 @@
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Pilih gambar untuk diupload"/>
+                android:hint="Pilih gambar untuk diupload"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:layout_marginTop="5dp"
@@ -125,7 +131,8 @@
                 android:src="@drawable/baseline_upload_file_24"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="70dp"
-                android:layout_height="80dp" />
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnUplod"
@@ -137,7 +144,8 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="#434242"
-                android:text="Upload"/>
+                android:text="Upload"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

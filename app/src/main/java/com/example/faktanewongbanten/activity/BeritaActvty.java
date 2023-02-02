@@ -3,7 +3,6 @@ package com.example.faktanewongbanten.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,19 +14,19 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
-import com.example.faktanewongbanten.adapter.ViewPager2Adapter;
-import com.example.faktanewongbanten.model.ModelBerita;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+@SuppressWarnings("ALL")
 public class BeritaActvty extends AppCompatActivity {
+    @SuppressWarnings("unused")
     RequestQueue requestQueue;
+    @SuppressWarnings("unused")
     Context context;
     TextView judul,tanggal,penulis,isi;
     ImageView gambar,back;

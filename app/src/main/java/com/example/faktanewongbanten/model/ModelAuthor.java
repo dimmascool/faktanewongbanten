@@ -1,5 +1,6 @@
 package com.example.faktanewongbanten.model;
 
+@SuppressWarnings("ALL")
 public class ModelAuthor {
     public String author_id,message,username,password,nickname,status,alamat,telpn,bio;
 

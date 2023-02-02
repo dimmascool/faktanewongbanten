@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-73dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
             <TextView
                 android:id="@+id/tvUsername"
                 android:layout_width="match_parent"
@@ -32,7 +33,8 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:text="Nama user yang bagus"/>
+                android:text="Nama user yang bagus"
+                tools:ignore="HardcodedText" />
             <TextView
                 android:id="@+id/tvBio"
                 android:layout_width="match_parent"
@@ -40,7 +42,8 @@
                 android:padding="5dp"
                 android:textSize="18sp"
                 android:textColor="@color/white"
-                android:text="Bio user yang ganteng sejagat raya"/>
+                android:text="Bio user yang ganteng sejagat raya"
+                tools:ignore="HardcodedText" />
             <View
                 android:layout_width="match_parent"
                 android:visibility="visible"
@@ -59,7 +62,8 @@
         android:layout_marginRight="10dp"
         android:text="Tambah Berita"
         app:icon="@drawable/edit"
-        app:iconGravity="textStart" />
+        app:iconGravity="textStart"
+        tools:ignore="HardcodedText" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,11 +80,12 @@
             android:id="@+id/tvKonten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/content"
-            android:drawableTint="@color/hitamabu"
             android:padding="5dp"
             android:textSize="18sp"
-            android:text=" Konten Saya"/>
+            android:text=" Konten Saya"
+            tools:ignore="HardcodedText,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/content" />
     </LinearLayout>
 
     <LinearLayout
@@ -92,37 +97,40 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_person_outline_24"
             android:padding="5dp"
             android:textSize="18sp"
             android:layout_below="@id/mypost"
             android:id="@+id/myprofil"
-            android:drawableTint="@color/hitamabu"
-            android:text=" Akun Saya"/>
+            android:text=" Akun Saya"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/ic_baseline_person_outline_24" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/bio"
             android:layout_marginStart="20dp"
             android:padding="5dp"
             android:textSize="18sp"
             android:layout_below="@id/myprofil"
             android:id="@+id/ubahbiodata"
-            android:drawableTint="@color/hitamabu"
-            android:text=" Ubah Biodata"/>
+            android:text=" Ubah Biodata"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/bio" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:drawableStart="@drawable/key"
             android:padding="5dp"
             android:textSize="18sp"
             android:layout_below="@id/ubahbiodata"
             android:id="@+id/ubahpassword"
-            android:drawableTint="@color/hitamabu"
-            android:text=" Ubah Password"/>
+            android:text=" Ubah Password"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/key" />
     </LinearLayout>
 
 
@@ -130,40 +138,42 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/share"
-        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/akunn"
         android:id="@+id/share_app"
-        android:text=" Share"/>
+        android:text=" Share"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/share" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/info"
-        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/share_app"
         android:id="@+id/about"
-        android:text=" About"/>
+        android:text=" About"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/info" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/version"
-        android:drawableTint="@color/hitamabu"
         android:padding="5dp"
         android:textSize="18sp"
         android:layout_below="@id/about"
         android:id="@+id/app_version"
-        android:text=" Versi Aplikasi"/>
+        android:text=" Versi Aplikasi"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/version" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/app_version"
-        android:id="@+id/logout"
         android:orientation="vertical">
         <View
             android:layout_width="match_parent"
@@ -175,11 +185,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:drawableStart="@drawable/logout"
-            android:drawableTint="@color/hitamabu"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text=" Log Out"/>
+            android:text=" Log Out"
+            tools:ignore="HardcodedText,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/logout" />
         <View
             android:layout_width="match_parent"
             android:visibility="visible"

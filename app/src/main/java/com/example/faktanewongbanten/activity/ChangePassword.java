@@ -25,11 +25,13 @@ import com.example.faktanewongbanten.R;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class ChangePassword extends AppCompatActivity {
     Context context;
     RequestQueue requestQueue;
     StringRequest stringRequest;
     ImageView back;
+    @SuppressWarnings("unused")
     public SharedPreferences sh;
     public Button btnUpdate,btnCancel;
 

@@ -3,6 +3,7 @@ package com.example.faktanewongbanten.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,16 +15,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.faktanewongbanten.R;
-import com.example.faktanewongbanten.model.ModelAuthor;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+@SuppressWarnings("ALL")
 public class AkunSaya extends AppCompatActivity {
     TextView nama,akunsaya,konten,logout,bio,btnBio,btnCP;
     Button addberita;
     Context context;
+    @SuppressWarnings("unused")
     public SharedPreferences sh;
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){

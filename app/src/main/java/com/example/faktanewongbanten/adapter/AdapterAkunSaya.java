@@ -1,5 +1,6 @@
 package com.example.faktanewongbanten.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class AdapterAkunSaya extends RecyclerView.Adapter<AdapterAkunSaya.ViewProcessHolder> {
     Context context;
     private ArrayList<ModelBerita> item;
@@ -50,6 +52,7 @@ public class AdapterAkunSaya extends RecyclerView.Adapter<AdapterAkunSaya.ViewPr
         return processHolder;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewProcessHolder holder, int position) {
         final ModelBerita data = item.get(position);
@@ -148,6 +151,7 @@ public class AdapterAkunSaya extends RecyclerView.Adapter<AdapterAkunSaya.ViewPr
         return item.size();
     }
 
+    @SuppressWarnings("CanBeFinal")
     public class ViewProcessHolder extends RecyclerView.ViewHolder {
         TextView judulBerita;
         TextView tglBerita;

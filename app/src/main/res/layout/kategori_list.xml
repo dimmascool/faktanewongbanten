@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvKategori"
     android:layout_width="180dp"
     android:layout_height="180dp"
@@ -15,7 +16,8 @@
         android:layout_height="180dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/macet" />
+        android:src="@drawable/macet"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +35,8 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvDeskripsi"
@@ -42,6 +45,7 @@
             android:layout_marginTop="-4dp"
             android:text="Semua berita terbaru"
             android:textColor="@color/white"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            tools:ignore="HardcodedText,SmallSp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

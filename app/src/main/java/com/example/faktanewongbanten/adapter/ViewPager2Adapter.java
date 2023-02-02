@@ -2,7 +2,6 @@ package com.example.faktanewongbanten.adapter;
 
 import android.content.Context;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.ViewHolder> {
 
     // Array of images
@@ -75,6 +75,7 @@ public class ViewPager2Adapter extends RecyclerView.Adapter<ViewPager2Adapter.Vi
     }
 
     // The ViewHolder class holds the view
+    @SuppressWarnings("CanBeFinal")
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView images;
         TextView judulBerita;

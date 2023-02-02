@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +22,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
 import com.example.faktanewongbanten.adapter.AdapterHome;
-import com.example.faktanewongbanten.adapter.ViewPager2Adapter;
 import com.example.faktanewongbanten.model.ModelBerita;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,6 +31,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class TrendingActvty extends AppCompatActivity {
 
     Context context;
@@ -43,6 +43,7 @@ public class TrendingActvty extends AppCompatActivity {
 
     SharedPreferences sh;
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
@@ -104,6 +105,7 @@ public class TrendingActvty extends AppCompatActivity {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
+                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onResponse(JSONObject response) {
                         mItems.clear();

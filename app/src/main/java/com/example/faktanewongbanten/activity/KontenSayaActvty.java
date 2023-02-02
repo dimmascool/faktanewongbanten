@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,7 +21,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
 import com.example.faktanewongbanten.adapter.AdapterAkunSaya;
-import com.example.faktanewongbanten.adapter.AdapterHome;
 import com.example.faktanewongbanten.model.ModelBerita;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class KontenSayaActvty extends AppCompatActivity {
 
     Context context;
@@ -43,6 +43,7 @@ public class KontenSayaActvty extends AppCompatActivity {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
@@ -98,6 +99,7 @@ public class KontenSayaActvty extends AppCompatActivity {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
+                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onResponse(JSONObject response) {
                         mItems.clear();

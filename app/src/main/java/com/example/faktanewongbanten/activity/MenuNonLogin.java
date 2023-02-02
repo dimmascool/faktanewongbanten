@@ -3,6 +3,7 @@ package com.example.faktanewongbanten.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +15,13 @@ import android.widget.Toast;
 import com.example.faktanewongbanten.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+@SuppressWarnings("ALL")
 public class MenuNonLogin extends AppCompatActivity {
     TextView login;
     Context context;
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){

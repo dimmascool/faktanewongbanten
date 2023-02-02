@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class TerbaruActvty extends AppCompatActivity {
     Context context;
     RecyclerView mRecyclerView;
@@ -41,6 +43,7 @@ public class TerbaruActvty extends AppCompatActivity {
     SharedPreferences sh;
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
@@ -99,6 +102,7 @@ public class TerbaruActvty extends AppCompatActivity {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
+                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onResponse(JSONObject response) {
                         mItems.clear();

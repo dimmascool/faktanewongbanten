@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.faktanewongbanten.activity.BeritaActvty;
 import com.example.faktanewongbanten.activity.KategoriResultactvty;
 import com.example.faktanewongbanten.model.ModelKategori;
 import com.example.faktanewongbanten.R;
@@ -20,6 +19,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class AdapterKategori extends RecyclerView.Adapter<AdapterKategori.ViewProcessHolder> {
 
     Context context;
@@ -66,6 +66,7 @@ public class AdapterKategori extends RecyclerView.Adapter<AdapterKategori.ViewPr
         return item.size();
     }
 
+    @SuppressWarnings("CanBeFinal")
     public class ViewProcessHolder extends RecyclerView.ViewHolder {
         TextView kategori;
         TextView deskripsi;

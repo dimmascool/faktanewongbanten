@@ -11,7 +11,8 @@
         android:id="@+id/logo"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:src="@drawable/logo_apk" />
+        android:src="@drawable/logo_apk"
+        tools:ignore="ContentDescription" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_above="@id/botnav"

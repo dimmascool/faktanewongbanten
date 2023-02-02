@@ -8,7 +8,6 @@
     tools:context=".activity.SplashScreen">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -31,7 +30,8 @@
             android:text="FAKTANE "
             android:textColor="@color/black"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:textColor="@color/birutua"
@@ -43,7 +43,8 @@
             android:layout_marginTop="-10dp"
             android:layout_marginStart="78dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam" />
 
         <TextView
             android:textColor="@color/black"
@@ -55,12 +56,12 @@
             android:layout_marginTop="-10dp"
             android:layout_marginStart="108dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam" />
     </LinearLayout>
 
 
     <ProgressBar
-        android:id="@+id/progressBarSplash"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

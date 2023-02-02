@@ -1,5 +1,6 @@
 package com.example.faktanewongbanten.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHolder> {
 
     Context context;
@@ -38,6 +40,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
         return processHolder;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewProcessHolder holder, int position) {
         final ModelBerita data = item.get(position);
@@ -85,6 +88,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewProcessHol
         return item.size();
     }
 
+    @SuppressWarnings("CanBeFinal")
     public class ViewProcessHolder extends RecyclerView.ViewHolder {
         TextView judulBerita;
         TextView tglBerita;

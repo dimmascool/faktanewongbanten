@@ -25,6 +25,7 @@ import com.example.faktanewongbanten.R;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class EditAkun extends AppCompatActivity {
     Context context;
     public EditText etNickname, etBio, etAlamat,etNohp;

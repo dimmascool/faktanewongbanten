@@ -1,14 +1,13 @@
 package com.example.faktanewongbanten.activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,16 +21,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
 import com.example.faktanewongbanten.adapter.AdapterHome;
-import com.example.faktanewongbanten.adapter.AdapterKategori;
 import com.example.faktanewongbanten.adapter.ViewPager2Adapter;
 import com.example.faktanewongbanten.model.ModelBerita;
-import com.example.faktanewongbanten.model.ModelKategori;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +34,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class HomeScreen extends AppCompatActivity {
 
     Context context;
@@ -51,6 +47,7 @@ public class HomeScreen extends AppCompatActivity {
     SharedPreferences sh;
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavigasi = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
@@ -89,6 +86,15 @@ public class HomeScreen extends AppCompatActivity {
         context=HomeScreen.this;
 
         requestQueue = Volley.newRequestQueue(this);
+        SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadjson();
+                bannerload();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         mRecyclerView = findViewById(R.id.recyclerview);
         BottomNavigationView botnav = findViewById(R.id.botnav);
@@ -157,6 +163,7 @@ public class HomeScreen extends AppCompatActivity {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,link_history,null,
                 new Response.Listener<JSONObject>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(JSONObject response) {
                 mItems.clear();

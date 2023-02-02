@@ -43,7 +43,7 @@
             app:tint="@color/red"
             android:src="@drawable/baseline_delete_24"
             android:layout_margin="10dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -54,7 +54,7 @@
             android:background="@color/white"
             android:src="@drawable/edit"
             android:layout_margin="10dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -68,7 +68,7 @@
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:ignore="HardcodedText"  />
+            tools:ignore="HardcodedText,SmallSp"  />
 
         <TextView
             android:layout_toEndOf="@id/tanggalBerita"
@@ -79,6 +79,6 @@
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:ignore="HardcodedText"  />
+            tools:ignore="HardcodedText,SmallSp"  />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

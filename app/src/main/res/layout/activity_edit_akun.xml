@@ -16,20 +16,21 @@
         <ImageView
             android:id="@+id/back"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_gravity="top"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/arrow_back"/>
+            android:src="@drawable/arrow_back"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:src="@drawable/logo_apk"
             android:layout_width="fill_parent"
-            android:layout_height="70dp" />
+            android:layout_height="70dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -51,8 +52,9 @@
                 android:text="Ubah Biodata"
                 android:textAlignment="center"
                 android:textColor="@color/hitamabu"
-                android:textSize="28dp"
-                android:textStyle="bold" />
+                android:textSize="28sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="10dp"
@@ -73,7 +75,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:drawableStart="@drawable/user"
-                    android:hint=" Nickname"/>
+                    android:hint=" Nickname"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -95,7 +98,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:drawableStart="@drawable/bio"
-                    android:hint=" Biografi" />
+                    android:hint=" Biografi"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -117,7 +121,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:drawableStart="@drawable/home"
-                    android:hint=" Alamat" />
+                    android:hint=" Alamat"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -139,7 +144,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:drawableStart="@drawable/phone"
-                    android:hint=" Nomor Handphone" />
+                    android:hint=" Nomor Handphone"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -151,25 +157,27 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnUpdateAccount"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:background="@drawable/button_border"
                     android:textStyle="bold"
                     android:textColor="@color/hitamabu"
                     android:textSize="20sp"
-                    android:text="Update"/>
+                    android:text="Update"
+                    tools:ignore="HardcodedText" />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnCancelUpdate"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:background="@drawable/button_border_delete"
                     android:textStyle="bold"
                     android:textColor="@color/hitamabu"
                     android:textSize="20sp"
-                    android:text="Cancel"/>
+                    android:text="Cancel"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
         </LinearLayout>

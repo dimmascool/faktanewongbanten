@@ -2,6 +2,7 @@ package com.example.faktanewongbanten.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.faktanewongbanten.R;
 
+@SuppressWarnings("ALL")
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
     Context context;

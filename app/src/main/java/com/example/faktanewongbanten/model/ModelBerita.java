@@ -1,5 +1,6 @@
 package com.example.faktanewongbanten.model;
 
+@SuppressWarnings("ALL")
 public class ModelBerita {
     public String id_berita;
     public String url_thumbnail;

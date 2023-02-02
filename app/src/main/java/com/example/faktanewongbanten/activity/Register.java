@@ -20,11 +20,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.faktanewongbanten.R;
-import com.example.faktanewongbanten.model.ModelAuthor;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class Register extends AppCompatActivity {
     Context context;
      public EditText etUsername, etPassword, etNickname, etBio, etAlamat,etNohp;
