@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardBerita"
+    android:layout_margin="10sp"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="10dp"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarBerita"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/judulBerita"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+            android:layout_toStartOf="@id/btnDelete"
+            android:layout_toEndOf="@id/gambarBerita"
+            android:text="Olahraga Pangkal Sehat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnDelete"
+            android:background="@color/white"
+            app:tint="@color/red"
+            android:src="@drawable/baseline_delete_24"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnEdit"
+            app:tint="@color/hijau"
+            android:layout_below="@id/btnDelete"
+            android:background="@color/white"
+            android:src="@drawable/edit"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_toEndOf="@id/gambarBerita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/tanggalBerita"
+            android:text="12 Febuari 2022"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,SmallSp"  />
+
+        <TextView
+            android:layout_toEndOf="@id/tanggalBerita"
+            android:layout_below="@id/judulBerita"
+            android:id="@+id/categoryBerita"
+            android:text=" | Olahraga"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,SmallSp"  />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

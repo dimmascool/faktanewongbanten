@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AkunSaya">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/profil"
+        android:gravity="bottom"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:src="@drawable/backgroundakunsaya"-->
+<!--            android:scaleType="centerCrop">-->
+<!--        </ImageView>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-73dp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Nama user yang bagus"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/tvBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="Bio user yang ganteng sejagat raya"
+                tools:ignore="HardcodedText" />
+            <View
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_tambahberita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profil"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Tambah Berita"
+        app:icon="@drawable/edit"
+        app:iconGravity="textStart"
+        tools:ignore="HardcodedText" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/btn_tambahberita"
+        android:id="@+id/mypost"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/tvKonten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:text=" Konten Saya"
+            tools:ignore="HardcodedText,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mypost"
+        android:id="@+id/akunn"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/mypost"
+            android:id="@+id/myprofil"
+            android:text=" Akun Saya"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/ic_baseline_person_outline_24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/myprofil"
+            android:id="@+id/ubahbiodata"
+            android:text=" Ubah Biodata"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/bio" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_below="@id/ubahbiodata"
+            android:id="@+id/ubahpassword"
+            android:text=" Ubah Password"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/key" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/akunn"
+        android:id="@+id/share_app"
+        android:text=" Share"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/share" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/share_app"
+        android:id="@+id/about"
+        android:text=" About"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/info" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_below="@id/about"
+        android:id="@+id/app_version"
+        android:text=" Versi Aplikasi"
+        tools:ignore="HardcodedText,UnusedAttribute"
+        app:drawableTint="@color/hitamabu"
+        app:drawableStartCompat="@drawable/version" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/app_version"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/tvLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text=" Log Out"
+            tools:ignore="HardcodedText,UnusedAttribute"
+            app:drawableTint="@color/hitamabu"
+            app:drawableStartCompat="@drawable/logout" />
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botnav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/login_btn_bg"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu" />
+</RelativeLayout>
